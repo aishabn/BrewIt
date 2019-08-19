@@ -1,14 +1,29 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react";
 
-import aeropress from "../../images/aeropress.png";
+import PopupModal from "../Bootstrap/PopupModal";
+
 import "./style.css";
 
-import methods from "../../data.js";
+const BrewMethods = props => {
+  {
+    const method = props.method;
 
-const BrewMethods = () => {
-  return;
+    return (
+      <div>
+        <div className="box">
+          <h4>
+            <span>{method.name}</span>
+          </h4>
+          <img src={method.imageUrl} alt={method.name} />
+          <h4>
+            <br />
 
-  //<img src={aeropress} alt="" />;
+            <PopupModal position="right center" method={method} />
+          </h4>
+        </div>
+      </div>
+    );
+  }
 };
 export default observer(BrewMethods);

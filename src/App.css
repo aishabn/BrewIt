@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  align-content: center;
 }
-
+.body {
+  background-color: rgb(39, 36, 36);
+  padding-left: 10px;
+  height: 1000px;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;

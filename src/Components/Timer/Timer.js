@@ -33,8 +33,6 @@ const Timer = () => {
         }, 1000);
       } else if (!isActive && seconds !== 0) {
         clearInterval(interval);
-
-        //reset timer to 0
       }
       return () => clearInterval(interval);
     },
