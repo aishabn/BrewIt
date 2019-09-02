@@ -8,11 +8,13 @@ const CoffeeGrams = props => {
 
   useEffect(() => {
     first();
+    console.log("props amount", props.amount);
+    console.log("props choice", props.choice);
   }, [props.amount, props.choice, grams]);
 
   const first = async () => {
     if (props.choice === "cups") {
-      if (props.amount == 0) {
+      if (props.amount == 0 || props.amount === undefined) {
         setGrams(props.method.grams);
         setWater(props.method.water);
       } else {
@@ -20,12 +22,12 @@ const CoffeeGrams = props => {
         setWater(240 * props.amount);
       }
     } else if (props.choice === "grams") {
-      if (props.amount === "0") {
+      if (props.amount == 0 || props.amount === undefined) {
+        setWater(props.method.water);
         setGrams(props.method.grams);
       } else {
-        console.log(water);
+        setGrams(props.amount);
         setWater(parseInt(props.amount * 15));
-        console.log("after", water);
       }
     }
   };

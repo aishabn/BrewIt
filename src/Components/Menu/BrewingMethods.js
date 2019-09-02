@@ -16,7 +16,7 @@ const BrewMethods = props => {
       <hr className="mt-2 mb-5" />
 
       <div className="row text-center text-lg-left">
-        <div className="col-lg-3 col-md-4 col-6" class="box">
+        <div className="col-lg-3 col-md-4 col-6" className="box">
           <div className="box">
             <img
               className="img-fluid img-thumbnail"

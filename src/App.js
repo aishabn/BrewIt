@@ -11,8 +11,8 @@ function App() {
   const [methods] = useState(brewMethods);
 
   return (
-    <div class="container">
-      <div class="col-12 col-6 col-3">
+    <div className="container">
+      <div className="col-12 col-6 col-3">
         <div className="body">
           <main>{<MethodList methods={methods} />}</main>
         </div>

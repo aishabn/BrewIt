@@ -7,13 +7,6 @@ const PopupDetails = props => {
   const [choice, setChoice] = useState("cups");
   const [amount, setAmount] = useState(1);
 
-  useEffect(() => {
-    if (choice === "grams") {
-      console.log("GRAMS");
-    } else if (choice === "cups") {
-      console.log("CUPS");
-    }
-  }, [choice, amount]);
   return (
     <div>
       <form
@@ -22,18 +15,19 @@ const PopupDetails = props => {
           setAmount(e.target.value);
         }}
       >
-        <div class="input-group">
+        <div className="input-group">
           <input
-            type="text"
+            type="number"
+            min={1}
             value={amount}
             placeholder={amount}
             className="form-control"
             aria-label="Text input with dropdown button"
             onChange={e => setAmount(e.target.value)}
           />
-          <div class="input-group-append">
+          <div className="input-group-append">
             <button
-              class="btn btn-outline-secondary dropdown-toggle"
+              className="btn btn-outline-secondary dropdown-toggle"
               type="button"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -41,11 +35,17 @@ const PopupDetails = props => {
             >
               {choice}
             </button>
-            <div class="dropdown-menu">
-              <button class="dropdown-item" onClick={() => setChoice("grams")}>
+            <div className="dropdown-menu">
+              <button
+                className="dropdown-item"
+                onClick={() => setChoice("grams")}
+              >
                 Grams
               </button>
-              <button class="dropdown-item" onClick={() => setChoice("cups")}>
+              <button
+                className="dropdown-item"
+                onClick={() => setChoice("cups")}
+              >
                 Cups
               </button>
             </div>
@@ -61,6 +61,7 @@ const PopupDetails = props => {
               method={props.method}
               amount={amount}
               choice={choice}
+              setAmount={setAmount}
             />
           }
         </div>
