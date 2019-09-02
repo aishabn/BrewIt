@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import React, { useState } from "react";
 
 import "./App.css";
 //Data
@@ -7,8 +6,6 @@ import brewMethods from "./data";
 
 //Components
 import MethodList from "./Components/Menu/MethodList";
-import MethodDetail from "./Components/MethodDetails/MethodDetail";
-import Timer from "./Components/Timer/Timer";
 
 function App() {
   const [methods] = useState(brewMethods);
@@ -24,4 +21,4 @@ function App() {
   );
 }
 
-export default withRouter(App);
+export default App;

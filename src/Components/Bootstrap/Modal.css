@@ -1,6 +1,6 @@
 .modal {
   font-size: 13px;
-  background-color: rgba(179, 178, 178, 0.815);
+  /* background-color: rgba(179, 178, 178, 0.815); */
   border: 2px solid rgb(223, 223, 223);
 }
 .modal > .header {

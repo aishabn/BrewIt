@@ -1,5 +1,4 @@
-import React, { Component, useState, useEffect, useRef } from "react";
-import { observer } from "mobx-react";
+import React from "react";
 
 import BrewingMethods from "./BrewingMethods";
 
@@ -13,4 +12,4 @@ const MethodList = props => {
   return <div className="wrapper">{methodList}</div>;
 };
 
-export default observer(MethodList);
+export default MethodList;

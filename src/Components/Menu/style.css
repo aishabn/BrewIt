@@ -34,8 +34,8 @@ img {
 }
 
 .modal-box {
-  border: 1px solid white;
-  background-color: rgba(68, 68, 68, 0.507);
+  border: 1px solid rgb(14, 13, 13);
+  /* background-color: rgba(68, 68, 68, 0.507); */
 
   border-width: 1px;
   border-style: solid;
@@ -51,7 +51,7 @@ img {
   border-style: solid;
   border-width: 0.5px;
 
-  background-color: rgba(80, 79, 79, 0.8);
+  /* background-color: rgba(80, 79, 79, 0.8); */
   border-radius: 5px;
   padding: 3px;
   text-align: center;

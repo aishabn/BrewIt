@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useRef, Component } from "react";
-import { observer } from "mobx-react";
-
-import timer from "../Timer/Timer";
+import React from "react";
 
 const Instructions = props => {
   {
@@ -10,4 +7,4 @@ const Instructions = props => {
     return <div>{method.instructions}</div>;
   }
 };
-export default observer(Instructions);
+export default Instructions;

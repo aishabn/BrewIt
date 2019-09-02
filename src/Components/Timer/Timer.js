@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { observer } from "mobx-react";
 //import "./timer.css";
 
 const Timer = () => {
@@ -62,4 +61,4 @@ const Timer = () => {
   );
 };
 
-export default observer(Timer);
+export default Timer;

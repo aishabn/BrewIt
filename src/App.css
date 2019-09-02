@@ -3,9 +3,11 @@
   align-content: center;
 }
 .body {
-  background-color: rgb(39, 36, 36);
-  padding-left: 10px;
-  height: 1000px;
+  /* background-color: rgb(39, 36, 36); */
+  /* padding-left: 10px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  height: 1000px; */
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

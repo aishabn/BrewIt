@@ -1,75 +1,57 @@
-import React, { useState } from "react";
-import { FormControl, Button } from "react-bootstrap";
-import InputGroup from "react-bootstrap/InputGroup";
-import { observer } from "mobx-react";
+//NOT USED
+
+import React, { useState, useEffect } from "react";
 
 import CoffeeGrams from "../Instructions/CoffeeGrams";
 import "../Menu/style.css";
 
 const DropdownList = props => {
-  const [cup, setCup] = useState();
-  const [gram, setGram] = useState();
-  const [amount, setAmount] = useState(0);
+  const [cup, setCup] = useState(false);
+  const [gram, setGram] = useState(false);
+  const [choice, setChoice] = useState();
+  const amount = props.amount;
 
-  function handleCup() {
-    setCup(true);
-    setGram(false);
-    console.log("CUP ", cup);
-  }
+  useEffect(() => {
+    console.log(amount, "AMOUNT");
+    if (choice === "Grams") {
+      setGram(true);
+      setCup(false);
+      console.log("GRAM", gram);
+      console.log("CUP", cup);
+    } else if (choice === "Cups") {
+      setCup(true);
+      setGram(false);
+      console.log("CUP", cup);
+      console.log("GRAM", gram);
+    }
+  }, [cup, gram, choice]);
 
-  function handleGram() {
-    setGram(true);
-    setCup(false);
-    console.log("GRAM ", gram);
-  }
-
-  function handleSubmit(e) {
-    setAmount(e.target.value);
-    console.log("SUBMIT", amount);
-  }
   return (
     <div>
-      <div>
-        <input
-          type="radio"
-          name="radioButtonTest"
-          value="1"
-          id="grams"
-          onClick={handleGram}
-        />
-        <label htmlFor="grams">Grams</label>
-        <input
-          type="radio"
-          name="radioButtonTest"
-          value="2"
-          id="cups"
-          onClick={handleCup}
-        />
-        <label htmlFor="cups">Cups</label>
+      <form>
+        <label>Choose your preference:</label>
+        <select value={choice} onChange={e => setChoice(e.target.value)}>
+          <option />
+          <option value="Grams">Grams</option>
+          <option value="Cups">Cups</option>
+        </select>
         <br />
-        <br />
-        <InputGroup className="mb-3">
-          <FormControl
-            placeholder="0"
-            aria-label="amount"
-            aria-describedby="basic-addon2"
-            onChange={handleSubmit}
-          />
-          <InputGroup.Append>
-            <Button variant="outline-secondary" onClick={handleSubmit}>
-              submit
-            </Button>
-          </InputGroup.Append>
-        </InputGroup>
-      </div>
-
+      </form>
       <br />
       <br />
       <div className="wrapper-details">
-        <div> {<CoffeeGrams method={props.method} amount={amount} />}</div>
+        <div>
+          {
+            <CoffeeGrams
+              method={props.method}
+              amount={amount}
+              choice={choice}
+            />
+          }
+        </div>
       </div>
     </div>
   );
 };
 
-export default observer(DropdownList);
+export default DropdownList;
