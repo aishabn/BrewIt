@@ -1,28 +1,29 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import MethodDetail from "../MethodDetails/MethodDetail";
+import { AmountContext } from "../Hooks/AmountContext";
 
 const CoffeeGrams = props => {
   const [water, setWater] = useState(props.method.water);
   const [grams, setGrams] = useState(0);
 
+  const { value, setValue } = useContext(AmountContext);
+
   useEffect(() => {
     first();
-    console.log("props amount", props.amount);
-    console.log("props choice", props.choice);
-  }, [props.amount, props.choice, grams]);
+  }, [props.amount, props.choice]);
 
   const first = async () => {
     if (props.choice === "cups") {
-      if (props.amount == 0 || props.amount === undefined) {
+      if (props.amount === 0 || props.amount === undefined) {
         setGrams(props.method.grams);
         setWater(props.method.water);
       } else {
         setGrams(parseInt(props.amount) * parseInt(props.method.grams));
-        setWater(240 * props.amount);
+        setWater(props.method.water * props.amount);
       }
     } else if (props.choice === "grams") {
-      if (props.amount == 0 || props.amount === undefined) {
+      if (props.amount === 0 || props.amount === undefined) {
         setWater(props.method.water);
         setGrams(props.method.grams);
       } else {
@@ -34,7 +35,7 @@ const CoffeeGrams = props => {
   return (
     <div className="col-lg-4 col-md-6 col-12">
       <div>
-        {<MethodDetail method={props.method} amount={grams} water={water} />}
+        {<MethodDetail method={props.method} grams={grams} water={water} />}
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-//import "./timer.css";
+import "./timer.css";
+import "../Menu/style.css";
 
-const Timer = () => {
+const Timer = props => {
   //const [milli, setMilli] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
-
   function toggle() {
     setIsActive(!isActive);
   }
@@ -44,9 +44,9 @@ const Timer = () => {
       <div className="time">
         {minutes}mins:{seconds}s
       </div>
-      <div className="row">
+      <div className="modal-footer">
         <button
-          className={`button button-primary button-primary-${
+          className={`button button-primary button-secondary-${
             isActive ? "active" : "inactive"
           }`}
           onClick={toggle}

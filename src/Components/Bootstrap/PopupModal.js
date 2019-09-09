@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import PopupDetails from "./PopupDetails";
+import { AmountContext } from "../Hooks/AmountContext";
+
 import "./Modal.css";
 
 const PopupExample = props => {
+  const { value, setValue } = useContext(AmountContext);
+  //console.log("POPUP MODAL , METHOD NAME", props.method.name);
+
   return (
     <div>
       <div>
@@ -12,6 +17,10 @@ const PopupExample = props => {
           className="btn"
           data-toggle="modal"
           data-target="#exampleModal"
+          onClick={() => {
+            //console.log("METHOD NAME, ON CLICK", props.method.name);
+            //setValue(props.method.grams);
+          }}
         >
           Brew
         </button>
@@ -20,7 +29,7 @@ const PopupExample = props => {
       <div
         className="modal fade bd-example-modal-lg"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -44,11 +53,14 @@ const PopupExample = props => {
               <div>
                 <PopupDetails method={props.method} />
               </div>
+              <br />
+              <br />
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-secondary">
-                Start
-              </button>
+              {/* <button type="button" className="btn btn-secondary">
+                Start Brewing
+              </button> */}
+
               <button type="button" className="btn" data-dismiss="modal">
                 Close
               </button>

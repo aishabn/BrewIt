@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { AmountContext } from "../Hooks/AmountContext";
+
+import Instructions from "../Instructions/Instructions";
 import "../Menu/style.css";
+
 const MethodDetail = props => {
-  const method = props.method;
-  const grams = props.amount;
-  const water = props.water;
+  const { value } = useContext(AmountContext);
 
   return (
     <div className="wrapper-details">
@@ -18,11 +20,14 @@ const MethodDetail = props => {
       </div>
       <div className="modal-box">
         <div>Grams of Coffee:</div> <br />
-        <div> {props.amount}g</div>
+        <div> {props.grams}g</div>
       </div>
       <div className="modal-box">
         <div>Water:</div> <br />
         <div> {props.water}ml</div>
+      </div>
+      <div>
+        <Instructions method={props.method} />
       </div>
     </div>
   );

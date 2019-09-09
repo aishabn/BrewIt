@@ -6,7 +6,7 @@ const methods = [
     grind_size: "fine",
     grams: "15",
     water: "240",
-    instructions: "step 1"
+    instructions: ["step 1", "step 2", "step 3", "step 4", "step 5"]
   },
   {
     imageUrl: "https://i.ibb.co/fnQvzK4/Coffee-Drip-512.png",
@@ -15,7 +15,7 @@ const methods = [
     grind_size: "medium",
     grams: "13",
     water: "220",
-    instructions: "step 1"
+    instructions: ["step 1", "step 2", "step 3"]
   },
   {
     imageUrl: "https://i.ibb.co/KKFMwj2/frenchpress.png",
@@ -24,7 +24,7 @@ const methods = [
     grind_size: "coarse",
     grams: "30",
     water: "350",
-    instructions: "step 1"
+    instructions: ["step 1", "step 2", "step 3"]
   },
   {
     //circle https://i.ibb.co/JpwqwcD/chemex-circle.png
@@ -32,10 +32,17 @@ const methods = [
     imageUrl: "https://i.ibb.co/6vrZ6dr/chemex.png",
     name: "Chemex",
     total_time: "",
-    grind_size: "",
-    grams: "",
-    water: "",
-    instructions: "step 1"
+    grind_size: "Medium",
+    grams: "25",
+    water: "340",
+    instructions: [
+      "Heat your water to 205 degrees by bringing it to a boil and letting it sit for 30 seconds.",
+      "Pour hot water around the inside of the filter for about 5 seconds. Keeping the filter in place, discard the rinse water.",
+      "Pour your ground coffee into the filter and gently shake the brewer back and forth to settle the grounds.",
+      "Slowly pour your water until all the grounds are saturated and let it sit for about 45 seconds",
+      "step 2",
+      "step 3"
+    ]
   },
   {
     //white https://i.ibb.co/nc7x37G/kalita-white.png
@@ -47,7 +54,7 @@ const methods = [
     grind_size: "",
     grams: "",
     water: "",
-    instructions: "step 1"
+    instructions: ["step 1", "step 2", "step 3"]
   }
 ];
 export default methods;
