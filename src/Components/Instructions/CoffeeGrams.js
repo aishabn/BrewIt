@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import MethodDetail from "../MethodDetails/MethodDetail";
-import { AmountContext } from "../Hooks/AmountContext";
 
 const CoffeeGrams = props => {
   const [water, setWater] = useState(props.method.water);
   const [grams, setGrams] = useState(0);
-
-  const { value, setValue } = useContext(AmountContext);
 
   useEffect(() => {
     first();

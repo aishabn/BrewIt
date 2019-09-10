@@ -5,8 +5,14 @@ const methods = [
     total_time: "8",
     grind_size: "fine",
     grams: "15",
-    water: "240",
-    instructions: ["step 1", "step 2", "step 3", "step 4", "step 5"]
+    water: "255",
+    instructions: [
+      "Begin with an Aeropress in the standard position on a decanter or mug and a washed, paper filter in place.",
+      "Add all coffee ground to the Aeropress, start timer and immediately top with all of the water",
+      "Stir North-to-South five times and East-to-West five times and cap with plunger.",
+      "At 1:00, uncap Aeropress and stir again",
+      "Recap and press, slowly, for 45 seconds."
+    ]
   },
   {
     imageUrl: "https://i.ibb.co/fnQvzK4/Coffee-Drip-512.png",

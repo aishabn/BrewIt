@@ -22,8 +22,8 @@ img {
   width: 600px;
   display: grid;
   grid-gap: 45px;
-  grid-template-columns: repeat(2, 150px);
-  padding-left: 130px;
+  grid-template-columns: repeat(2, 200px);
+  padding-left: 130 px;
 }
 
 .wrapper-details-input {

@@ -1,14 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
-import { AmountContext } from "../Hooks/AmountContext";
 import CoffeeGrams from "../Instructions/CoffeeGrams";
 import "../Menu/style.css";
 
 const PopupDetails = props => {
-  const { value, setValue } = useContext(AmountContext);
   const [choice, setChoice] = useState("grams");
   const [amount, setAmount] = useState(props.method.grams);
-  //console.log("POPUP DETAILS CONTEXT VALUE", value);
 
   return (
     <div>
@@ -21,7 +18,6 @@ const PopupDetails = props => {
           aria-label="Text input with dropdown button"
           onChange={e => {
             setAmount(e.target.value);
-            console.log("on change", amount);
           }}
         />
 

@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import PopupModal from "../Bootstrap/PopupModal";
-import { AmountContext } from "../Hooks/AmountContext";
 
 import "./style.css";
 
 const BrewMethods = props => {
-  //const { value } = useContext(AmountContext);
-  //console.log("BREWING METHODS, NAME", props.method.name);
-
   return (
     <div className="container">
       <h3 className="font-weight-medium text-center text-lg-left mt-4 mb-0">

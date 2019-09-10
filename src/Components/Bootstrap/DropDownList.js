@@ -12,17 +12,12 @@ const DropdownList = props => {
   const amount = props.amount;
 
   useEffect(() => {
-    console.log(amount, "AMOUNT");
     if (choice === "Grams") {
       setGram(true);
       setCup(false);
-      console.log("GRAM", gram);
-      console.log("CUP", cup);
     } else if (choice === "Cups") {
       setCup(true);
       setGram(false);
-      console.log("CUP", cup);
-      console.log("GRAM", gram);
     }
   }, [cup, gram, choice]);
 

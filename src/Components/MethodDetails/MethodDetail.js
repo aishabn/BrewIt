@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
-
-import { AmountContext } from "../Hooks/AmountContext";
+import React from "react";
 
 import Instructions from "../Instructions/Instructions";
 import "../Menu/style.css";
 
 const MethodDetail = props => {
-  const { value } = useContext(AmountContext);
-
   return (
     <div className="wrapper-details">
       <div className="modal-box">
