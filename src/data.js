@@ -2,13 +2,13 @@ const methods = [
   {
     imageUrl: "https://i.ibb.co/4T3GVgt/aeropress.png",
     name: "Aeropress",
-    total_time: "8",
+    total_time: "2:45",
     grind_size: "fine",
     grams: "15",
     water: "255",
     instructions: [
       "Begin with an Aeropress in the standard position on a decanter or mug and a washed, paper filter in place.",
-      "Add all coffee ground to the Aeropress, start timer and immediately top with all of the water",
+      "Add all coffee grounds to the Aeropress, start timer and immediately top with all of the water",
       "Stir North-to-South five times and East-to-West five times and cap with plunger.",
       "At 1:00, uncap Aeropress and stir again",
       "Recap and press, slowly, for 45 seconds."

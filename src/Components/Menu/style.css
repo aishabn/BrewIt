@@ -3,6 +3,12 @@ img {
   width: 135px;
 }
 
+p {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
 .wrapper {
   display: grid;
   grid-gap: 50px;
@@ -21,9 +27,9 @@ img {
 .wrapper-details-inst {
   width: 600px;
   display: grid;
-  grid-gap: 45px;
-  grid-template-columns: repeat(2, 200px);
-  padding-left: 130 px;
+  grid-gap: 100px;
+  grid-template-columns: 150px 350px;
+  padding-left: 40px;
 }
 
 .wrapper-details-input {
@@ -56,4 +62,27 @@ img {
   padding: 3px;
   text-align: center;
   font-size: 15px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: black;
+  padding: 100px;
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: black;
+  padding-right: 150px;
 }

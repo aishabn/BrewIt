@@ -1,35 +1,33 @@
 import React from "react";
 
-const Carousel = () => {
+import "../Menu/style.css";
+
+const Carousel = props => {
+  const instructions = props.method.instructions;
+  let count = 0;
+  const instructionList = instructions.map(inst => {
+    if (count === 0) {
+      count += 1;
+
+      return <div class="carousel-item active">{instructions[0]}</div>;
+    } else {
+      return <div class="carousel-item">{inst}</div>;
+    }
+  });
   return (
     <div
-      id="carouselExampleIndicators"
+      id="carouselExampleControls"
       class="carousel slide"
       data-ride="carousel"
     >
-      <ol class="carousel-indicators">
-        <li
-          data-target="#carouselExampleIndicators"
-          data-slide-to="0"
-          class="active"
-        ></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="..." />
+        <div class="card-body">
+          <p class="card-text">{instructionList}</p>
         </div>
       </div>
       <a
         class="carousel-control-prev"
-        href="#carouselExampleIndicators"
+        href="#carouselExampleControls"
         role="button"
         data-slide="prev"
       >
@@ -38,7 +36,7 @@ const Carousel = () => {
       </a>
       <a
         class="carousel-control-next"
-        href="#carouselExampleIndicators"
+        href="#carouselExampleControls"
         role="button"
         data-slide="next"
       >
@@ -48,5 +46,4 @@ const Carousel = () => {
     </div>
   );
 };
-
 export default Carousel;
