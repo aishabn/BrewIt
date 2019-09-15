@@ -1,28 +1,30 @@
-import React, { Component } from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+
 import "./App.css";
 
-//Components
-import Timer from "./Components/Timer/Timer";
-import BrewingMethods from "./Components/Menu/BrewingMethods";
+//Data
+import brewMethods from "./data";
 
-class App extends Component {
-  getView() {
-    return (
-      <Switch>
-        <Redirect exact from="/" to="/" />
-        <Route path="/timer/" component={Timer} />
-        <Route path="/brewmethods/" component={BrewingMethods} />
-      </Switch>
-    );
-  }
-  render() {
-    return (
-      <div>
-        <main>{this.getView()} </main>
+//Components
+import MethodList from "./Components/Menu/MethodList";
+import Navbar from "./Components/Bootstrap/NavBar";
+import Footer from "./Components/Bootstrap/Footer";
+
+function App() {
+  const [methods] = useState(brewMethods);
+  return (
+    <>
+      <Navbar />
+      <div className="container">
+        <div className="col-12 col-6 col-3">
+          <div className="body">
+            <MethodList methods={methods} />
+          </div>
+        </div>
       </div>
-    );
-  }
+      <Footer />
+    </>
+  );
 }
 
-export default withRouter(App);
+export default App;

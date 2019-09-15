@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { observer } from "mobx-react";
-//import "./timer.css";
+import "./timer.css";
+import "../Menu/style.css";
 
-const Timer = () => {
-  //const [milli, setMilli] = useState(0);
+const Timer = props => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
@@ -23,6 +22,8 @@ const Timer = () => {
 
   useEffect(
     () => {
+      console.log(props.method.total_time);
+
       let interval = null;
       if (isActive) {
         const startTime = Date.now() - currentTime;
@@ -33,8 +34,6 @@ const Timer = () => {
         }, 1000);
       } else if (!isActive && seconds !== 0) {
         clearInterval(interval);
-
-        //reset timer to 0
       }
       return () => clearInterval(interval);
     },
@@ -47,16 +46,16 @@ const Timer = () => {
       <div className="time">
         {minutes}mins:{seconds}s
       </div>
-      <div className="row">
+      <div className="modal-footer">
         <button
-          className={`button button-primary button-primary-${
+          className={`button button-primary button-secondary-${
             isActive ? "active" : "inactive"
           }`}
           onClick={toggle}
         >
           {isActive ? "Pause" : "Start"}
         </button>
-        <button className="button" onClick={reset}>
+        <button className="button btn-danger" onClick={reset}>
           Reset
         </button>
       </div>
@@ -64,4 +63,4 @@ const Timer = () => {
   );
 };
 
-export default observer(Timer);
+export default Timer;

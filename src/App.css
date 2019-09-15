@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-content: center;
 }
 
 .App-logo {
@@ -17,6 +18,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Navbar {
+  border-bottom: #282c34 solid 5px;
+  width: 700px;
 }
 
 .App-link {
