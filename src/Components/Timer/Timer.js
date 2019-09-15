@@ -3,12 +3,12 @@ import "./timer.css";
 import "../Menu/style.css";
 
 const Timer = props => {
-  //const [milli, setMilli] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
+
   function toggle() {
     setIsActive(!isActive);
   }
@@ -22,6 +22,8 @@ const Timer = props => {
 
   useEffect(
     () => {
+      console.log(props.method.total_time);
+
       let interval = null;
       if (isActive) {
         const startTime = Date.now() - currentTime;
@@ -53,7 +55,7 @@ const Timer = props => {
         >
           {isActive ? "Pause" : "Start"}
         </button>
-        <button className="button" onClick={reset}>
+        <button className="button btn-danger" onClick={reset}>
           Reset
         </button>
       </div>

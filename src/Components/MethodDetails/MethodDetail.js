@@ -11,7 +11,7 @@ const MethodDetail = props => {
         <div>{props.method.grind_size}</div>
       </div>
       <div className="modal-box">
-        <div>Total Time:</div> <br />
+        <div>Brew Time:</div> <br />
         <div> {props.method.total_time} minutes</div>
       </div>
       <div className="modal-box">
