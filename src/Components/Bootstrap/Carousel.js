@@ -1,47 +1,50 @@
 import React from "react";
 
-import "../Menu/style.css";
+import "../BrewingList/style.css";
 
-const Carousel = props => {
-  const instructions = props.method.instructions;
+const Carousel = ({ brewingMethod }) => {
+  const instructions = brewingMethod.instructions;
   let count = 0;
   const instructionList = instructions.map(inst => {
     if (count === 0) {
       count += 1;
 
-      return <div class="carousel-item active">{instructions[0]}</div>;
+      return <div className="carousel-item active">{instructions[0]}</div>;
     } else {
-      return <div class="carousel-item">{inst}</div>;
+      return <div className="carousel-item">{inst}</div>;
     }
   });
   return (
     <div
       id="carouselExampleControls"
-      class="carousel slide"
+      className="carousel slide"
       data-ride="carousel"
+      data-interval="false"
     >
-      <div class="carousel-inner">
-        <div class="card-body">
-          <p class="card-text">{instructionList}</p>
+      <div className="carousel-inner">
+        <div className="card-body">
+          <p className="card-text">{instructionList}</p>
         </div>
       </div>
+      {/* hide prev on first */}
       <a
-        class="carousel-control-prev"
+        className="carousel-control-prev"
         href="#carouselExampleControls"
         role="button"
         data-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
       </a>
+      {/* hide next on last */}
       <a
-        class="carousel-control-next"
+        className="carousel-control-next"
         href="#carouselExampleControls"
         role="button"
         data-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
       </a>
     </div>
   );
