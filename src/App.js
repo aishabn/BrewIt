@@ -3,26 +3,37 @@ import React, { useState } from "react";
 import "./App.css";
 
 //Data
-import brewMethods from "./data";
+import allBrewMethods from "./data";
 
 //Components
-import MethodList from "./Components/Menu/MethodList";
-import Navbar from "./Components/Bootstrap/NavBar";
-import Footer from "./Components/Bootstrap/Footer";
+import MethodList from "./Components/BrewingList/index";
+import AboutPage from "./Components/AboutPage";
+import NavBar from "./Components/Bootstrap/NavBar";
+
+import Grid from "@material-ui/core/Grid";
 
 function App() {
-  const [methods] = useState(brewMethods);
+  const [brewingMethods] = useState(allBrewMethods);
+  const [showHome, setShowHome] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <div className="container">
-        <div className="col-12 col-6 col-3">
-          <div className="body">
-            <MethodList methods={methods} />
-          </div>
-        </div>
+      <NavBar setShowHome={setShowHome} />
+      <div style={{ flexGrow: "3" }}>
+        <Grid
+          container
+          spacing={3}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          {showHome ? (
+            <MethodList brewingMethods={brewingMethods} />
+          ) : (
+            <AboutPage />
+          )}
+        </Grid>
       </div>
-      <Footer />
     </>
   );
 }

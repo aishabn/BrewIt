@@ -1,18 +1,16 @@
 import React from "react";
+import "../BrewingList/style.css";
 
-const Navbar = props => {
+//logo:https://i.ibb.co/55QqKnT/Brew-it-logo.png
+//slogan:https://i.ibb.co/0qPgdyW/Brew-it-slogan.png
+//full:https://i.ibb.co/xCn9sqP/Brew-it-4.png
+
+const Navbar = ({ setShowHome }) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-light"
       style={{ borderBottom: "#282c34 solid 1px" }}
     >
-      <a href="#">
-        <img
-          src="https://i.ibb.co/xCn9sqP/Brew-it-4.png"
-          alt="logo"
-          style={{ width: "250px", height: "100px" }}
-        />
-      </a>
       <button
         className="navbar-toggler"
         type="button"
@@ -24,17 +22,19 @@ const Navbar = props => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
+      <div id="navbarNav">
+        <ul className="nav navbar-nav navbar-center">
+          <li>
+            <img
+              src="https://i.ibb.co/0qPgdyW/Brew-it-slogan.png"
+              alt="logo"
+              onClick={() => setShowHome(true)}
+            />
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <h6 className="nav-link" onClick={() => setShowHome(false)}>
               About
-            </a>
+            </h6>
           </li>
         </ul>
       </div>

@@ -1,48 +1,59 @@
 import React from "react";
 
-import "../Menu/style.css";
+import "../BrewingList/style.css";
 
-const Carousel = props => {
-  const instructions = props.method.instructions;
+const Carousel = ({ brewingMethod }) => {
+  const instructions = brewingMethod.instructions;
   let count = 0;
+  let length = instructions.length;
   const instructionList = instructions.map(inst => {
     if (count === 0) {
       count += 1;
 
-      return <div class="carousel-item active">{instructions[0]}</div>;
+      return <div className="carousel-item active">{instructions[0]}</div>;
     } else {
-      return <div class="carousel-item">{inst}</div>;
+      return <div className="carousel-item">{inst}</div>;
     }
   });
   return (
     <div
-      id="carouselExampleControls"
-      class="carousel slide"
+      id="carouselControls"
+      className="carousel slide"
       data-ride="carousel"
+      data-interval="false"
     >
-      <div class="carousel-inner">
-        <div class="card-body">
-          <p class="card-text">{instructionList}</p>
+      <div className="carousel-inner">
+        <div className="card-body">
+          <p className="card-text">{instructionList}</p>
         </div>
       </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleControls"
+
+      {/* hide prev on first
+       <a
+        className="carousel-control-prev"
+        href="#carouselControls"
         role="button"
         data-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleControls"
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
+      </a> */}
+
+      {/* hide next on last */}
+      <button
+        className="carousel-control-next"
+        href="#carouselControls"
         role="button"
         data-slide="next"
+        style={{
+          height: "165px",
+          width: "15px",
+          color: "black"
+        }}
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        ><span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
+      </button>
     </div>
   );
 };

@@ -1,31 +1,46 @@
 import React, { useState, useEffect } from "react";
-import "./timer.css";
-import "../Menu/style.css";
+import "./style.css";
+import "../BrewingList/style.css";
 
-const Timer = props => {
+const Timer = ({ brewingMethod }) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [currentTime, setTime] = useState(0);
 
   const [isActive, setIsActive] = useState(false);
 
-  function toggle() {
-    setIsActive(!isActive);
-  }
+  const propSeconds = brewingMethod.total_time.substring(
+    brewingMethod.total_time.indexOf(":") + 1
+  );
+  const propMinutes = brewingMethod.total_time.substr(
+    0,
+    brewingMethod.total_time.indexOf(":")
+  );
 
-  function reset() {
+  const reset = () => {
     setSeconds(0);
     setMinutes(0);
     setTime(0);
     setIsActive(false);
-  }
+  };
+
+  const endTimer = () => {
+    alert("alert");
+    setIsActive(!isActive);
+  };
+
+  const checkTime = () => {
+    if (propMinutes === minutes && propSeconds === seconds) {
+      console.log("alert");
+      endTimer();
+    }
+  };
 
   useEffect(
     () => {
-      console.log(props.method.total_time);
-
       let interval = null;
       if (isActive) {
+        checkTime();
         const startTime = Date.now() - currentTime;
         interval = setInterval(() => {
           setTime(Date.now() - startTime);
@@ -44,14 +59,15 @@ const Timer = props => {
   return (
     <div className="app">
       <div className="time">
-        {minutes}mins:{seconds}s
+        {minutes}
+        {minutes > 1 ? "mins" : "min"}:{seconds}s
       </div>
       <div className="modal-footer">
         <button
           className={`button button-primary button-secondary-${
             isActive ? "active" : "inactive"
           }`}
-          onClick={toggle}
+          onClick={() => setIsActive(!isActive)}
         >
           {isActive ? "Pause" : "Start"}
         </button>

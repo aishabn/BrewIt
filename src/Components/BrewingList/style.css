@@ -21,6 +21,7 @@ p {
   width: 600px;
   display: grid;
   grid-gap: 45px;
+  padding-left: 50px;
   grid-template-columns: repeat(4, 130px);
 }
 
@@ -40,24 +41,16 @@ p {
 }
 
 .modal-box {
-  border: 1px solid rgb(14, 13, 13);
-  /* background-color: rgba(68, 68, 68, 0.507); */
-
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 0px;
+  border: 1px solid rgb(158, 157, 157);
   padding: 10px;
   size: 130px;
   text-align: center;
 }
 
 .box {
-  /* f5a623 */
   border-color: rgb(223, 223, 223);
   border-style: solid;
   border-width: 0.5px;
-
-  /* background-color: rgba(80, 79, 79, 0.8); */
   border-radius: 5px;
   padding: 3px;
   text-align: center;
@@ -74,10 +67,10 @@ p {
 }
 
 .carousel-control-next-icon:after {
-  content: ">";
-  font-size: 55px;
+  /* content: ">"; */
+  font-size: 10px;
   color: black;
-  padding: 100px;
+  /* padding: 100px; */
 }
 
 .carousel-control-prev-icon:after {
@@ -85,4 +78,25 @@ p {
   font-size: 55px;
   color: black;
   padding-right: 150px;
+}
+
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar {
+  padding: 50px;
+}
+
+.navbar img {
+  height: 100px;
+  width: 250px;
+  margin-top: -50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.item {
+  flex-grow: 1;
 }

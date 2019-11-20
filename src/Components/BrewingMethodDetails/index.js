@@ -1,29 +1,28 @@
 import React from "react";
+import Instructions from "../Instructions/index";
+import "../BrewingList/style.css";
 
-import Instructions from "../Instructions/Instructions";
-import "../Menu/style.css";
-
-const MethodDetail = props => {
+const MethodDetail = ({ brewingMethod, grams, water }) => {
   return (
     <div className="wrapper-details">
       <div className="modal-box">
         <div>Coffee Grounds: </div> <br />
-        <div>{props.method.grind_size}</div>
+        <div>{brewingMethod.grind_size}</div>
       </div>
       <div className="modal-box">
         <div>Brew Time:</div> <br />
-        <div> {props.method.total_time} minutes</div>
+        <div> {brewingMethod.total_time} minutes</div>
       </div>
       <div className="modal-box">
         <div>Grams of Coffee:</div> <br />
-        <div> {props.grams}g</div>
+        <div> {grams}g</div>
       </div>
       <div className="modal-box">
         <div>Water:</div> <br />
-        <div> {props.water}ml</div>
+        <div> {water}ml</div>
       </div>
       <div>
-        <Instructions method={props.method} />
+        <Instructions brewingMethod={brewingMethod} />
       </div>
     </div>
   );
