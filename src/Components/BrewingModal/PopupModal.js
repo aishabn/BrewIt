@@ -1,13 +1,13 @@
 //Not used moved to BrewingMethodItem
 
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import PopupDetails from "./PopupDetails";
 
 import "./Modal.css";
 
-const ModalExample = ({ brewingMethod }) => {
+const Modal = ({ brewingMethod }) => {
   const [modalState, setState] = useState(false);
 
   const handleToggle = () => {
@@ -45,4 +45,4 @@ const ModalExample = ({ brewingMethod }) => {
   );
 };
 
-export default ModalExample;
+export default Modal;

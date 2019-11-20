@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 
+import "../BrewingList/style.css";
 const CupSize = ({ handleChange, selectedOption, setSelectedOption }) => {
   const handleChoice = e => {
     setSelectedOption(e);
@@ -18,14 +19,13 @@ const CupSize = ({ handleChange, selectedOption, setSelectedOption }) => {
       justify="center"
       alignItems="center"
       spacing={3}
-      style={{ paddingBottom: "50px" }}
     >
       <Grid item xs={3}>
         <h5>Cup Size:</h5>
       </Grid>
       <Grid item xs={3}>
         <button
-          className="button button-primary"
+          className="modal-box"
           onClick={() => handleChoice(227)}
           style={buttonSize}
         >
@@ -34,7 +34,7 @@ const CupSize = ({ handleChange, selectedOption, setSelectedOption }) => {
       </Grid>
       <Grid item xs={3}>
         <button
-          className="button button-primary"
+          className="modal-box"
           onClick={() => handleChoice(240)}
           style={buttonSize}
         >
@@ -43,7 +43,7 @@ const CupSize = ({ handleChange, selectedOption, setSelectedOption }) => {
       </Grid>
       <Grid item xs={3}>
         <button
-          className="button button-primary"
+          className="modal-box"
           onClick={() => handleChoice(454)}
           style={buttonSize}
         >

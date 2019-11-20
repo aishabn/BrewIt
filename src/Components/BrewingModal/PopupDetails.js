@@ -9,7 +9,8 @@ import "../BrewingList/style.css";
 import "./Modal.css";
 
 const PopupDetails = ({ brewingMethod }) => {
-  let amount = 15;
+  //let amount = 15;
+  const [amount, setAmount] = useState(15);
   const [grams, setGrams] = useState();
   const [water, setWater] = useState();
   const [selectedOption, setSelectedOption] = useState(227);
@@ -33,13 +34,13 @@ const PopupDetails = ({ brewingMethod }) => {
     }
   ];
 
-  const handleChange = e => {
+  const handleChange = () => {
     setGrams(parseInt(selectedOption / amount));
     setWater(parseInt(grams * 15));
   };
 
-  const valuetext = value => {
-    amount = value;
+  const handleRatio = value => {
+    setAmount(value);
     handleChange();
     return `${value}`;
   };
@@ -56,7 +57,7 @@ const PopupDetails = ({ brewingMethod }) => {
           container
           spacing={2}
           direction="row"
-          style={{ paddingBottom: "50px" }}
+          style={{ paddingBottom: "30px", paddingTop: "35px" }}
         >
           <Grid item xs={4}>
             <h5>Coffee to Water Ratio: </h5>
@@ -70,7 +71,7 @@ const PopupDetails = ({ brewingMethod }) => {
               defaultValue={15}
               min={12}
               max={15}
-              getAriaValueText={valuetext}
+              getAriaValueText={handleRatio}
               step={1}
               marks={marks}
               valueLabelDisplay="on"

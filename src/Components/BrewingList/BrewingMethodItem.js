@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
+// Components
 import PopupDetails from "../BrewingModal/PopupDetails";
-import Grid from "@material-ui/core/Grid";
 
+// Styling
+import Grid from "@material-ui/core/Grid";
 import "../BrewingModal/Modal.css";
 import "./style.css";
 import "../../index.css";
@@ -41,7 +43,12 @@ const BrewMethods = ({ brewingMethod }) => {
               </button>
             </div>
 
-            <Modal size="lg" isOpen={modalState} toggle={handleToggle}>
+            <Modal
+              size="lg"
+              isOpen={modalState}
+              toggle={handleToggle}
+              backdrop="false"
+            >
               <ModalHeader toggle={handleToggle}>
                 {brewingMethod.name}
               </ModalHeader>
