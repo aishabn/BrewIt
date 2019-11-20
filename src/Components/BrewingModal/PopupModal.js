@@ -35,9 +35,9 @@ const ModalExample = ({ brewingMethod }) => {
             <PopupDetails brewingMethod={brewingMethod} />
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={handleToggle}>
+            <button className="button button-primary" onClick={handleToggle}>
               Cancel
-            </Button>
+            </button>
           </ModalFooter>
         </Modal>
       </div>

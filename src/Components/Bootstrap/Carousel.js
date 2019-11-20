@@ -5,6 +5,7 @@ import "../BrewingList/style.css";
 const Carousel = ({ brewingMethod }) => {
   const instructions = brewingMethod.instructions;
   let count = 0;
+  let length = instructions.length;
   const instructionList = instructions.map(inst => {
     if (count === 0) {
       count += 1;
@@ -16,7 +17,7 @@ const Carousel = ({ brewingMethod }) => {
   });
   return (
     <div
-      id="carouselExampleControls"
+      id="carouselControls"
       className="carousel slide"
       data-ride="carousel"
       data-interval="false"
@@ -26,26 +27,33 @@ const Carousel = ({ brewingMethod }) => {
           <p className="card-text">{instructionList}</p>
         </div>
       </div>
-      {/* hide prev on first */}
-      <a
+
+      {/* hide prev on first
+       <a
         className="carousel-control-prev"
-        href="#carouselExampleControls"
+        href="#carouselControls"
         role="button"
         data-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="sr-only">Previous</span>
-      </a>
+      </a> */}
+
       {/* hide next on last */}
-      <a
+      <button
         className="carousel-control-next"
-        href="#carouselExampleControls"
+        href="#carouselControls"
         role="button"
         data-slide="next"
+        style={{
+          height: "165px",
+          width: "15px",
+          color: "black"
+        }}
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        ><span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="sr-only">Next</span>
-      </a>
+      </button>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-import PopupModal from "../BrewingModal/PopupModal";
 import PopupDetails from "../BrewingModal/PopupDetails";
+import Grid from "@material-ui/core/Grid";
 
 import "../BrewingModal/Modal.css";
 import "./style.css";
+import "../../index.css";
 
 const BrewMethods = ({ brewingMethod }) => {
   const [modalState, setState] = useState(false);
@@ -15,13 +16,13 @@ const BrewMethods = ({ brewingMethod }) => {
 
   return (
     <div onClick={handleToggle}>
-      <div className="container">
+      <Grid item xs>
         <h3 className="font-weight-medium text-center text-lg-left mt-4 mb-0">
           {brewingMethod.name}
         </h3>
         <hr className="mt-2 mb-5" />
         <div className="row text-center text-lg-left">
-          <div className="col-lg-3 col-md-4 col-6" className="box">
+          <div className="box">
             <img
               className="img-fluid img-thumbnail"
               src={brewingMethod.imageUrl}
@@ -48,14 +49,14 @@ const BrewMethods = ({ brewingMethod }) => {
                 <PopupDetails brewingMethod={brewingMethod} />
               </ModalBody>
               <ModalFooter>
-                <Button color="secondary" onClick={handleToggle}>
+                <button className="button button-dark" onClick={handleToggle}>
                   Cancel
-                </Button>
+                </button>
               </ModalFooter>
             </Modal>
           </div>
         </div>
-      </div>
+      </Grid>
     </div>
   );
 };

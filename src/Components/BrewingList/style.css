@@ -67,10 +67,10 @@ p {
 }
 
 .carousel-control-next-icon:after {
-  content: ">";
-  font-size: 55px;
+  /* content: ">"; */
+  font-size: 10px;
   color: black;
-  padding: 100px;
+  /* padding: 100px; */
 }
 
 .carousel-control-prev-icon:after {
@@ -95,4 +95,8 @@ p {
   margin-top: -50px;
   margin-left: 30px;
   margin-right: 30px;
+}
+
+.item {
+  flex-grow: 1;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import CupSize from "../Bootstrap/CupSize";
 import MethodDetail from "../BrewingMethodDetails/index";
 import Slider from "@material-ui/core/Slider";
 import Grid from "@material-ui/core/Grid";
@@ -45,53 +46,23 @@ const PopupDetails = ({ brewingMethod }) => {
 
   return (
     <div>
-      <div className="size-wrapper">
-        <div className="Radio">
-          <input
-            type="radio"
-            value="227"
-            checked={selectedOption === "227"}
-            onChange={e => {
-              setSelectedOption(e.currentTarget.value);
-              handleChange(e);
-            }}
-          />
-          <img src="https://i.ibb.co/LPjgZ6j/cup.jpg" alt="8oz" />
-          8oz
-        </div>
-        <div className="Radio">
-          <input
-            type="radio"
-            value="340"
-            checked={selectedOption === "340"}
-            onChange={e => {
-              setSelectedOption(e.currentTarget.value);
-              handleChange(e);
-            }}
-          />{" "}
-          <img src="https://i.ibb.co/LPjgZ6j/cup.jpg" alt="12oz" />
-          12oz
-        </div>
-        <div className="Radio">
-          <input
-            type="radio"
-            value="454"
-            checked={selectedOption === "454"}
-            onChange={e => {
-              setSelectedOption(e.currentTarget.value);
-              handleChange(e);
-            }}
-          />
-          <img src="https://i.ibb.co/LPjgZ6j/cup.jpg" alt="16oz" />
-          16oz
-        </div>
-      </div>
-      <br />
-      <br />
-      <div style={{ paddingLeft: "200px", paddingTop: "30px" }}>
-        <Grid container spacing={2}>
-          <Grid item sx>
-            <h6>lighter</h6>
+      <CupSize
+        handleChange={handleChange}
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+      />
+      <div styles={{ flexGrow: "1" }}>
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          style={{ paddingBottom: "50px" }}
+        >
+          <Grid item xs={4}>
+            <h5>Coffee to Water Ratio: </h5>
+          </Grid>
+          <Grid item>
+            <h6>stronger</h6>
           </Grid>
           <Grid item s>
             <Slider
@@ -104,18 +75,17 @@ const PopupDetails = ({ brewingMethod }) => {
               marks={marks}
               valueLabelDisplay="on"
               style={{
-                width: "200px"
+                width: "200px",
+                color: "#8cb9fd"
               }}
             />
           </Grid>
-          <Grid item>
-            <h6>stronger</h6>
+          <Grid item xs>
+            <h6>lighter</h6>
           </Grid>
         </Grid>
       </div>
 
-      <br />
-      <br />
       <div>
         <MethodDetail
           brewingMethod={brewingMethod}

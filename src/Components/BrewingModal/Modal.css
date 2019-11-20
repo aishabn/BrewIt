@@ -48,20 +48,18 @@
   border-radius: 3px;
 }
 .Radio {
-  border: 2px solid #8cb9fd;
   padding: 10px;
-  /* size: 150px; */
-  height: 110px;
+  size: 150px;
+  height: 150px;
   width: 200px;
   text-align: center;
 }
-img {
-  height: 100px;
-  width: 150px;
-  padding: 10px;
+[type="radio"]:checked + img {
+  border: 3px solid #8cb9fd;
 }
+
 .size-wrapper {
-  width: 600px;
+  width: 550px;
   display: grid;
   grid-gap: 130px;
   grid-template-columns: repeat(3, 150px);

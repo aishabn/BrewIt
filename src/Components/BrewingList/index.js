@@ -1,6 +1,7 @@
 import React from "react";
 
 import BrewingMethodItem from "./BrewingMethodItem";
+import Grid from "@material-ui/core/Grid";
 
 import "./style.css";
 
@@ -9,7 +10,11 @@ const MethodList = ({ brewingMethods }) => {
     <BrewingMethodItem key={method.name} brewingMethod={method} />
   ));
 
-  return <div className="wrapper">{methodList}</div>;
+  return (
+    <Grid>
+      <div className="wrapper">{methodList}</div>
+    </Grid>
+  );
 };
 
 export default MethodList;
