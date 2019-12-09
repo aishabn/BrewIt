@@ -1,12 +1,16 @@
 import React from "react";
+
+//Components
 import Instructions from "../Instructions/index";
+
+//Styling
 import "../BrewingList/style.css";
 
 const MethodDetail = ({ brewingMethod, grams, water }) => {
   return (
     <div className="wrapper-details">
       <div className="modal-box">
-        <div>Coffee Grounds: </div> <br />
+        <div>Grind Size: </div> <br />
         <div>{brewingMethod.grind_size}</div>
       </div>
       <div className="modal-box">

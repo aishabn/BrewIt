@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 // Components
-import PopupDetails from "../BrewingModal/PopupDetails";
+import BrewingModal from "../BrewingModal/index";
 
 // Styling
 import Grid from "@material-ui/core/Grid";
@@ -11,9 +10,10 @@ import "./style.css";
 import "../../index.css";
 
 const BrewMethods = ({ brewingMethod }) => {
-  const [modalState, setState] = useState(false);
+  const [modalState, setModalState] = useState(false);
+
   const handleToggle = () => {
-    setState(!modalState);
+    setModalState(!modalState);
   };
 
   return (
@@ -43,24 +43,11 @@ const BrewMethods = ({ brewingMethod }) => {
               </button>
             </div>
 
-            <Modal
-              size="lg"
-              isOpen={modalState}
-              toggle={handleToggle}
-              backdrop="false"
-            >
-              <ModalHeader toggle={handleToggle}>
-                {brewingMethod.name}
-              </ModalHeader>
-              <ModalBody>
-                <PopupDetails brewingMethod={brewingMethod} />
-              </ModalBody>
-              <ModalFooter>
-                <button className="button button-dark" onClick={handleToggle}>
-                  Cancel
-                </button>
-              </ModalFooter>
-            </Modal>
+            <BrewingModal
+              handleToggle={handleToggle}
+              brewingMethod={brewingMethod}
+              modalState={modalState}
+            />
           </div>
         </div>
       </Grid>
