@@ -1,5 +1,6 @@
 import React from "react";
 
+//Styling
 import "../BrewingList/style.css";
 
 const Carousel = ({ brewingMethod }) => {
@@ -10,9 +11,25 @@ const Carousel = ({ brewingMethod }) => {
     if (count === 0) {
       count += 1;
 
-      return <div className="carousel-item active">{instructions[0]}</div>;
+      return (
+        <div className="carousel-item active">
+          Step: {count} <br />
+          <br />
+          {instructions[0]}
+        </div>
+      );
     } else {
-      return <div className="carousel-item">{inst}</div>;
+      count += 1;
+      if (count === length) {
+        console.log("done");
+      }
+      return (
+        <div className="carousel-item">
+          Step: {count} <br />
+          <br />
+          {inst}
+        </div>
+      );
     }
   });
   return (
@@ -28,18 +45,6 @@ const Carousel = ({ brewingMethod }) => {
         </div>
       </div>
 
-      {/* hide prev on first
-       <a
-        className="carousel-control-prev"
-        href="#carouselControls"
-        role="button"
-        data-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
-      </a> */}
-
-      {/* hide next on last */}
       <button
         className="carousel-control-next"
         href="#carouselControls"

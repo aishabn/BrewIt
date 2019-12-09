@@ -9,7 +9,6 @@ import "../BrewingList/style.css";
 import "./Modal.css";
 
 const PopupDetails = ({ brewingMethod }) => {
-  //let amount = 15;
   const [amount, setAmount] = useState(15);
   const [grams, setGrams] = useState();
   const [water, setWater] = useState();
@@ -42,7 +41,7 @@ const PopupDetails = ({ brewingMethod }) => {
   const handleRatio = value => {
     setAmount(value);
     handleChange();
-    return `${value}`;
+    return JSON.stringify(value);
   };
 
   return (
@@ -53,12 +52,7 @@ const PopupDetails = ({ brewingMethod }) => {
         setSelectedOption={setSelectedOption}
       />
       <div styles={{ flexGrow: "1" }}>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          style={{ paddingBottom: "30px", paddingTop: "35px" }}
-        >
+        <Grid container spacing={2} direction="row" className="grid-padding">
           <Grid item xs={4}>
             <h5>Coffee to Water Ratio: </h5>
           </Grid>

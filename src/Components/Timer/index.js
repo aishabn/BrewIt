@@ -25,13 +25,13 @@ const Timer = ({ brewingMethod }) => {
   };
 
   const endTimer = () => {
-    alert("alert");
+    //
+    alert("all done!");
     setIsActive(!isActive);
   };
 
   const checkTime = () => {
     if (propMinutes === minutes && propSeconds === seconds) {
-      console.log("alert");
       endTimer();
     }
   };

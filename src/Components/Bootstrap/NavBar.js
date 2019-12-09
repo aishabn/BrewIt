@@ -1,10 +1,6 @@
 import React from "react";
 import "../BrewingList/style.css";
 
-//logo:https://i.ibb.co/55QqKnT/Brew-it-logo.png
-//slogan:https://i.ibb.co/0qPgdyW/Brew-it-slogan.png
-//full:https://i.ibb.co/xCn9sqP/Brew-it-4.png
-
 const Navbar = ({ setShowHome }) => {
   return (
     <nav

@@ -6,7 +6,7 @@ import "./style.css";
 const AboutPage = () => {
   return (
     <div styles={{ flexGrow: "1" }}>
-      <h3 style={{ paddingTop: "50px" }}>Coffee Grind Size:</h3>
+      <h3>Coffee Grind Size:</h3>
       <Grid container direction="column" justify="center" alignItems="center">
         <div>
           <Grid item xs={6}>
@@ -32,8 +32,8 @@ const AboutPage = () => {
           </Grid>
         </div>
         <div>
-          <h3 style={{ paddingTop: "50px" }}>Water to Coffee Ratio: </h3>
-          <p className="img-wrapper" style={{ textAlign: "left" }}>
+          <h3>Water to Coffee Ratio: </h3>
+          <p className="img-wrapper">
             A brew ratio is simply a guide to help you figure out how much water
             and coffee you should use for brewing. <br />
             Obviously this ratio depends on your brew method, type of coffee,

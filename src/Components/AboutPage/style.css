@@ -10,3 +10,9 @@
   grid-template-columns: repeat(3, 200px);
   margin-left: -100px;
 }
+h3 {
+  padding-top: 50px;
+}
+p {
+  text-align: left;
+}
